@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Siti Aisah — Graphic Designer & Videographer</title>
-  <meta name="description" content="Portfolio graphic designer dan videographer: branding, desain visual, video, dan motion." />
+  <title>Siti Aisah — Poster Designer & Videographer</title>
+  <meta name="description" content="Portfolio Siti Aisah — Poster Designer, Visual Storyteller & Videographer. Canva, CapCut, foto, infografis." />
   <meta name="theme-color" content="#7a1f2b" />
+  <meta property="og:title" content="Siti Aisah Portfolio" />
+  <meta property="og:image" content="assets/img/profile.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -13,15 +15,21 @@
 </head>
 <body>
 
+  <!-- Blob background -->
+  <div class="blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
   <!-- ============ NAVBAR ============ -->
   <header class="nav" id="nav">
     <div class="container nav__inner">
       <a href="#home" class="logo">AISAH<span>.</span></a>
       <nav class="nav__links" id="navLinks">
         <a href="#about">Tentang</a>
-        <a href="#services">Layanan</a>
+        <a href="#services">Skill</a>
         <a href="#work">Karya</a>
-        <a href="#showreel">Showreel</a>
         <a href="#contact" class="btn btn--sm">Hubungi Saya</a>
       </nav>
       <button class="nav__toggle" id="navToggle" aria-label="Buka menu">
@@ -35,41 +43,50 @@
     <section class="hero" id="home">
       <div class="container hero__grid">
         <div class="hero__text">
-          <p class="eyebrow reveal"><span class="dot"></span> Tersedia untuk project baru</p>
+          <p class="eyebrow reveal"><span class="dot"></span> Open for collaboration ✨</p>
           <h1 class="hero__title reveal">
-            Desain yang <em>berbicara</em>,<br />
-            video yang <em>bercerita</em>.
+            Visual yang <em>bicara</em>,<br />
+            cerita yang <em>bergerak</em>.
           </h1>
           <p class="hero__lead reveal">
-            Halo, saya <strong>Siti Aisah</strong> — Graphic Designer &amp; Videographer
-            yang membantu brand, bisnis, dan kreator tampil lebih kuat lewat visual dan
-            cerita yang berkesan.
+            Halo, saya <strong>Siti Aisah</strong> — Poster Designer &amp; Videographer
+            yang percaya setiap ide layak tampil indah lewat desain dan visual yang berkesan.
           </p>
           <div class="hero__cta reveal">
             <a href="#work" class="btn">Lihat Karya</a>
-            <a href="#contact" class="btn btn--ghost">Mulai Project</a>
+            <a href="https://www.instagram.com/frameflowid" target="_blank" rel="noopener" class="btn btn--ghost">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              @frameflowid
+            </a>
           </div>
-          <ul class="hero__stats reveal">
-            <li><strong data-count="3">0</strong><span>+ Tahun<br />Pengalaman</span></li>
-            <li><strong data-count="50">0</strong><span>+ Project<br />Selesai</span></li>
-            <li><strong data-count="30">0</strong><span>+ Klien<br />Puas</span></li>
-          </ul>
+
+          <!-- Social pills -->
+          <div class="hero__socials reveal">
+            <a href="https://www.instagram.com/frameflowid" target="_blank" rel="noopener" class="social-pill">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+              @frameflowid
+            </a>
+            <a href="https://www.instagram.com/aisaaa_anya_3" target="_blank" rel="noopener" class="social-pill">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+              @aisaaa_anya_3
+            </a>
+          </div>
         </div>
 
         <div class="hero__visual reveal">
           <figure class="media media--hero">
-            <img src="assets/img/profile.jpg" alt="Foto profil" onerror="this.remove()" />
-            <span class="media__ph">Foto Profil</span>
+            <img src="assets/img/profile.jpg" alt="Siti Aisah" />
+            <span class="media__ph">Siti Aisah</span>
           </figure>
           <div class="badge badge--rotate" aria-hidden="true">
             <svg viewBox="0 0 100 100">
               <defs><path id="circle" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0" /></defs>
-              <text><textPath href="#circle">DESIGN • VIDEO • MOTION • STORY • </textPath></text>
+              <text><textPath href="#circle">DESIGN • VIDEO • VISUAL • STORY • </textPath></text>
             </svg>
-            <span class="badge__play">▶</span>
+            <span class="badge__play">✦</span>
           </div>
-          <div class="chip chip--a">🎨 Graphic Design</div>
-          <div class="chip chip--b">🎬 Videography</div>
+          <div class="chip chip--a bounce">🎨 Poster Design</div>
+          <div class="chip chip--b bounce2">🎬 Videography</div>
         </div>
       </div>
     </section>
@@ -77,39 +94,42 @@
     <!-- ============ MARQUEE ============ -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
-        <span>Branding</span><i>✦</i><span>Logo Design</span><i>✦</i><span>Social Media</span><i>✦</i>
-        <span>Video Editing</span><i>✦</i><span>Cinematography</span><i>✦</i><span>Motion Graphic</span><i>✦</i>
-        <span>Color Grading</span><i>✦</i><span>Poster</span><i>✦</i>
-        <span>Branding</span><i>✦</i><span>Logo Design</span><i>✦</i><span>Social Media</span><i>✦</i>
-        <span>Video Editing</span><i>✦</i><span>Cinematography</span><i>✦</i><span>Motion Graphic</span><i>✦</i>
-        <span>Color Grading</span><i>✦</i><span>Poster</span><i>✦</i>
+        <span>Poster Design</span><i>✦</i><span>Canva</span><i>✦</i><span>Visual Storytelling</span><i>✦</i>
+        <span>CapCut</span><i>✦</i><span>Infographic</span><i>✦</i><span>Photography</span><i>✦</i>
+        <span>Content Creator</span><i>✦</i><span>Frame Flow</span><i>✦</i>
+        <span>Poster Design</span><i>✦</i><span>Canva</span><i>✦</i><span>Visual Storytelling</span><i>✦</i>
+        <span>CapCut</span><i>✦</i><span>Infographic</span><i>✦</i><span>Photography</span><i>✦</i>
+        <span>Content Creator</span><i>✦</i><span>Frame Flow</span><i>✦</i>
       </div>
     </div>
 
     <!-- ============ ABOUT ============ -->
     <section class="section about" id="about">
       <div class="container about__grid">
-        <figure class="media media--about reveal">
-          <img src="assets/img/about.jpg" alt="Foto saat bekerja" onerror="this.remove()" />
+        <figure class="media media--about reveal tilt-card">
+          <img src="assets/img/about.jpg" alt="Siti Aisah bekerja" onerror="this.remove()" />
           <span class="media__ph">Foto Tentang Saya</span>
         </figure>
         <div class="about__text">
           <p class="section__label reveal">01 — Tentang Saya</p>
-          <h2 class="section__title reveal">Menggabungkan <em>estetika</em> dan <em>cerita</em> dalam setiap karya.</h2>
+          <h2 class="section__title reveal">Creative mind behind <em>every poster</em> &amp; visual story.</h2>
           <p class="reveal">
-            Saya adalah seorang desainer grafis sekaligus videografer yang percaya bahwa visual
-            yang baik bukan hanya enak dilihat, tapi juga mampu menyampaikan pesan. Dari identitas
-            brand hingga video promosi, saya mengerjakan setiap project dengan riset, konsep yang
-            matang, dan perhatian pada detail.
+            Saya Siti Aisah — seorang kreator visual yang jatuh cinta pada desain poster,
+            storytelling lewat gambar, dan video pendek. Lewat akun <strong>@frameflowid</strong>,
+            saya membagikan karya poster dan cerita visual yang saya buat dengan penuh semangat.
           </p>
           <p class="reveal">
-            Saat tidak sedang di depan layar, saya biasanya berburu cahaya bagus dengan kamera,
-            mencari referensi, dan bereksperimen dengan gaya visual baru.
+            Bagi saya, visual bukan sekadar estetika — tapi cara paling jujur untuk menyampaikan perasaan dan ide.
           </p>
           <div class="tools reveal">
             <p class="tools__title">Tools yang saya gunakan</p>
             <ul class="tools__list">
-              <li>Canva</li><li>CapCut</li>
+              <li>Canva</li>
+              <li>CapCut</li>
+              <li>Poster Design</li>
+              <li>Visual Storytelling</li>
+              <li>Photography</li>
+              <li>Infographic</li>
             </ul>
           </div>
         </div>
@@ -120,57 +140,57 @@
     <section class="section services" id="services">
       <div class="container">
         <div class="section__head">
-          <p class="section__label reveal">02 — Layanan</p>
+          <p class="section__label reveal">02 — Skill & Layanan</p>
           <h2 class="section__title reveal">Apa yang bisa saya <em>bantu</em>?</h2>
         </div>
         <div class="services__grid">
-          <article class="card reveal">
+          <article class="card reveal tilt-card">
             <span class="card__num">01</span>
             <div class="card__icon">
               <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1.1.9-2 2-2h2.4A4.6 4.6 0 0 0 22 9.8C22 5.9 17.5 3 12 3Z"/><circle cx="7.5" cy="10.5" r="1.3"/><circle cx="11" cy="7" r="1.3"/><circle cx="16" cy="8" r="1.3"/></svg>
             </div>
-            <h3>Graphic Design</h3>
-            <p>Desain poster, feed media sosial, banner, packaging, dan materi promosi yang eye-catching.</p>
+            <h3>Poster Design</h3>
+            <p>Desain poster kreatif dan eye-catching dengan Canva — dari event, promosi, sampai poster seni.</p>
           </article>
-          <article class="card reveal">
+          <article class="card reveal tilt-card">
             <span class="card__num">02</span>
             <div class="card__icon">
               <svg viewBox="0 0 24 24"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/><path d="m3 7 9 5 9-5M12 12v10"/></svg>
             </div>
-            <h3>Brand Identity</h3>
-            <p>Logo, palet warna, tipografi, dan brand guideline yang membuat bisnismu mudah dikenali.</p>
+            <h3>Visual Storytelling</h3>
+            <p>Menyampaikan cerita dan emosi lewat rangkaian visual yang kuat dan bermakna.</p>
           </article>
-          <article class="card reveal">
+          <article class="card reveal tilt-card">
             <span class="card__num">03</span>
             <div class="card__icon">
               <svg viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3"/></svg>
             </div>
-            <h3>Videography</h3>
-            <p>Pengambilan video untuk event, company profile, produk, wedding, hingga konten sosial media.</p>
+            <h3>Video Editing</h3>
+            <p>Edit video reels dan konten sosmed yang engaging dan kekinian menggunakan CapCut.</p>
           </article>
-          <article class="card reveal">
+          <article class="card reveal tilt-card">
             <span class="card__num">04</span>
             <div class="card__icon">
-              <svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
             </div>
-            <h3>Video Editing</h3>
-            <p>Editing, color grading, sound design, dan subtitle agar videomu terasa sinematik.</p>
+            <h3>Photography</h3>
+            <p>Foto dokumentasi, candid, dan portrait yang jujur dan penuh karakter.</p>
           </article>
-          <article class="card reveal">
+          <article class="card reveal tilt-card">
             <span class="card__num">05</span>
             <div class="card__icon">
-              <svg viewBox="0 0 24 24"><path d="M5 3v18l15-9L5 3Z"/></svg>
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
             </div>
-            <h3>Motion Graphic</h3>
-            <p>Animasi logo, intro, lower third, dan infografis bergerak untuk konten yang lebih hidup.</p>
+            <h3>Infographic</h3>
+            <p>Infografis yang informatif dan cantik — data jadi visual yang mudah dipahami.</p>
           </article>
-          <article class="card reveal">
+          <article class="card reveal tilt-card">
             <span class="card__num">06</span>
             <div class="card__icon">
               <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
             </div>
             <h3>Content Creation</h3>
-            <p>Konsep, produksi, dan editing konten Reels / TikTok yang sesuai karakter brand.</p>
+            <p>Konten sosial media yang konsisten, estetik, dan sesuai karakter brand atau persona.</p>
           </article>
         </div>
       </div>
@@ -182,114 +202,163 @@
         <div class="section__head section__head--row">
           <div>
             <p class="section__label reveal">03 — Karya Pilihan</p>
-            <h2 class="section__title reveal">Beberapa <em>project</em> favorit.</h2>
+            <h2 class="section__title reveal">Beberapa <em>karya</em> favorit.</h2>
+            <p class="section__sub reveal">Geser untuk melihat lebih banyak → swipe to explore</p>
           </div>
           <div class="filters reveal" role="tablist">
             <button class="filter is-active" data-filter="all">Semua</button>
             <button class="filter" data-filter="design">Design</button>
             <button class="filter" data-filter="video">Video</button>
+            <button class="filter" data-filter="photo">Foto</button>
           </div>
         </div>
 
-        <div class="work__grid">
-          <article class="work__item work__item--tall reveal" data-cat="design">
-            <figure class="media">
-              <img src="assets/img/work-1.jpg" alt="Project 1" onerror="this.remove()" />
-              <span class="media__ph">Foto Project 1</span>
-            </figure>
-            <div class="work__info"><span>Branding</span><h3>Brand Identity Project</h3></div>
-          </article>
-          <article class="work__item reveal" data-cat="video">
-            <figure class="media">
-              <img src="assets/img/work-2.jpg" alt="Project 2" onerror="this.remove()" />
-              <span class="media__ph">Foto Project 2</span>
-            </figure>
-            <span class="work__play">▶</span>
-            <div class="work__info"><span>Videography</span><h3>Company Profile Video</h3></div>
-          </article>
-          <article class="work__item reveal" data-cat="design">
-            <figure class="media">
-              <img src="assets/img/work-3.jpg" alt="Project 3" onerror="this.remove()" />
-              <span class="media__ph">Foto Project 3</span>
-            </figure>
-            <div class="work__info"><span>Poster</span><h3>Event Poster Series</h3></div>
-          </article>
-          <article class="work__item reveal" data-cat="video">
-            <figure class="media">
-              <img src="assets/img/work-4.jpg" alt="Project 4" onerror="this.remove()" />
-              <span class="media__ph">Foto Project 4</span>
-            </figure>
-            <span class="work__play">▶</span>
-            <div class="work__info"><span>Wedding Film</span><h3>Cinematic Wedding</h3></div>
-          </article>
-          <article class="work__item work__item--wide reveal" data-cat="design">
-            <figure class="media">
-              <img src="assets/img/work-5.jpg" alt="Project 5" onerror="this.remove()" />
-              <span class="media__ph">Foto Project 5</span>
-            </figure>
-            <div class="work__info"><span>Social Media</span><h3>Instagram Feed Design</h3></div>
-          </article>
-          <article class="work__item reveal" data-cat="video">
-            <figure class="media">
-              <img src="assets/img/work-6.jpg" alt="Project 6" onerror="this.remove()" />
-              <span class="media__ph">Foto Project 6</span>
-            </figure>
-            <span class="work__play">▶</span>
-            <div class="work__info"><span>Motion</span><h3>Product Motion Ads</h3></div>
-          </article>
+        <!-- Swipeable work grid -->
+        <div class="work__scroll-wrap">
+          <div class="work__grid" id="workGrid">
+
+            <article class="work__item work__item--tall reveal" data-cat="design">
+              <figure class="media">
+                <img src="assets/img/work-1.jpg" alt="Poster Design" onerror="this.remove()" />
+                <span class="media__ph">
+                  <span class="ph-icon">🎨</span>
+                  Foto Karya 1<br/><small>Poster Design</small>
+                </span>
+              </figure>
+              <div class="work__info"><span>Poster</span><h3>Poster Design</h3></div>
+              <div class="work__hover-tag">Tap untuk lihat</div>
+            </article>
+
+            <article class="work__item reveal" data-cat="video">
+              <figure class="media">
+                <img src="assets/img/work-2.jpg" alt="Video Content" onerror="this.remove()" />
+                <span class="media__ph">
+                  <span class="ph-icon">🎬</span>
+                  Foto Karya 2<br/><small>Video Content</small>
+                </span>
+              </figure>
+              <span class="work__play">▶</span>
+              <div class="work__info"><span>Video</span><h3>Video Content</h3></div>
+              <div class="work__hover-tag">Tap untuk lihat</div>
+            </article>
+
+            <article class="work__item reveal" data-cat="photo">
+              <figure class="media">
+                <img src="assets/img/work-3.jpg" alt="Photography" onerror="this.remove()" />
+                <span class="media__ph">
+                  <span class="ph-icon">📸</span>
+                  Foto Karya 3<br/><small>Photography</small>
+                </span>
+              </figure>
+              <div class="work__info"><span>Foto</span><h3>Photography</h3></div>
+              <div class="work__hover-tag">Tap untuk lihat</div>
+            </article>
+
+            <article class="work__item reveal" data-cat="design">
+              <figure class="media">
+                <img src="assets/img/work-4.jpg" alt="Infographic" onerror="this.remove()" />
+                <span class="media__ph">
+                  <span class="ph-icon">📊</span>
+                  Foto Karya 4<br/><small>Infographic</small>
+                </span>
+              </figure>
+              <div class="work__info"><span>Infografis</span><h3>Infographic Design</h3></div>
+              <div class="work__hover-tag">Tap untuk lihat</div>
+            </article>
+
+            <article class="work__item work__item--wide reveal" data-cat="design">
+              <figure class="media">
+                <img src="assets/img/work-5.jpg" alt="Visual Story" onerror="this.remove()" />
+                <span class="media__ph">
+                  <span class="ph-icon">✨</span>
+                  Foto Karya 5<br/><small>Visual Storytelling</small>
+                </span>
+              </figure>
+              <div class="work__info"><span>Visual</span><h3>Visual Storytelling</h3></div>
+              <div class="work__hover-tag">Tap untuk lihat</div>
+            </article>
+
+            <article class="work__item reveal" data-cat="video">
+              <figure class="media">
+                <img src="assets/img/work-6.jpg" alt="Reels Edit" onerror="this.remove()" />
+                <span class="media__ph">
+                  <span class="ph-icon">🎬</span>
+                  Foto Karya 6<br/><small>Reels / CapCut</small>
+                </span>
+              </figure>
+              <span class="work__play">▶</span>
+              <div class="work__info"><span>Reels</span><h3>CapCut Edit</h3></div>
+              <div class="work__hover-tag">Tap untuk lihat</div>
+            </article>
+
+          </div>
         </div>
+
+        <!-- Add more hint -->
+        <p class="work__add-hint reveal">
+          📌 Foto karya bisa ditambahkan langsung — kirim file, langsung diupload ke grid ini.
+        </p>
       </div>
     </section>
 
-    <!-- ============ SHOWREEL ============ -->
-    <section class="section showreel" id="showreel">
+    <!-- ============ INSTAGRAM FEED ============ -->
+    <section class="section insta" id="insta">
       <div class="container">
         <div class="section__head section__head--center">
-          <p class="section__label section__label--light reveal">04 — Showreel</p>
-          <h2 class="section__title reveal">Lihat karya saya dalam <em>gerak</em>.</h2>
+          <p class="section__label reveal">04 — Instagram</p>
+          <h2 class="section__title reveal">Ikuti perjalanan <em>kreatif</em> saya.</h2>
         </div>
-        <!--
-          Ganti data-video dengan link embed YouTube kamu, contoh:
-          data-video="https://www.youtube.com/embed/VIDEO_ID?autoplay=1"
-        -->
-        <div class="reel reveal" id="reel" data-video="">
-          <figure class="media">
-            <img src="assets/img/showreel.jpg" alt="Thumbnail showreel" onerror="this.remove()" />
-            <span class="media__ph">Thumbnail Showreel</span>
-          </figure>
-          <button class="reel__btn" aria-label="Putar showreel"><span>▶</span></button>
-          <p class="reel__caption">Showreel 2026 · 01:30</p>
+        <div class="insta__cards reveal">
+          <a href="https://www.instagram.com/frameflowid" target="_blank" rel="noopener" class="insta__card insta__card--main">
+            <div class="insta__avatar">
+              <img src="assets/img/profile.jpg" alt="frameflowid" onerror="this.remove()" />
+              <span class="media__ph" style="font-size:.7rem;">IG</span>
+            </div>
+            <div class="insta__info">
+              <strong>@frameflowid</strong>
+              <p>Creative mind behind every poster 🎨 Poster designer ✳️ Visual storytelling</p>
+              <span class="insta__badge">Akun Portofolio</span>
+            </div>
+            <span class="insta__arrow">↗</span>
+          </a>
+          <a href="https://www.instagram.com/aisaaa_anya_3" target="_blank" rel="noopener" class="insta__card">
+            <div class="insta__avatar">
+              <img src="assets/img/profile.jpg" alt="aisaaa_anya_3" onerror="this.remove()" />
+              <span class="media__ph" style="font-size:.7rem;">IG</span>
+            </div>
+            <div class="insta__info">
+              <strong>@aisaaa_anya_3</strong>
+              <p>Aisaaa | Growth Explorer 📸 Sharing real stories & visuals</p>
+              <span class="insta__badge insta__badge--personal">Personal</span>
+            </div>
+            <span class="insta__arrow">↗</span>
+          </a>
         </div>
-      </div>
-    </section>
-
-    <!-- ============ PROCESS ============ -->
-    <section class="section process">
-      <div class="container">
-        <div class="section__head">
-          <p class="section__label reveal">05 — Proses Kerja</p>
-          <h2 class="section__title reveal">Dari ide sampai <em>jadi</em>.</h2>
-        </div>
-        <ol class="process__list">
-          <li class="reveal"><span>01</span><h3>Diskusi</h3><p>Memahami kebutuhan, target audiens, dan tujuan project.</p></li>
-          <li class="reveal"><span>02</span><h3>Konsep</h3><p>Moodboard, storyboard, dan arah visual yang disepakati bersama.</p></li>
-          <li class="reveal"><span>03</span><h3>Produksi</h3><p>Proses desain, shooting, dan editing dengan detail.</p></li>
-          <li class="reveal"><span>04</span><h3>Delivery</h3><p>Revisi, finalisasi, dan file siap pakai di berbagai platform.</p></li>
-        </ol>
       </div>
     </section>
 
     <!-- ============ CONTACT ============ -->
     <section class="section contact" id="contact">
       <div class="container contact__box reveal">
-        <p class="section__label section__label--light">06 — Kontak</p>
-        <h2 class="contact__title">Punya ide project?<br /><em>Yuk, wujudkan bareng.</em></h2>
-        <a href="mailto:emailkamu@gmail.com" class="contact__mail">emailkamu@gmail.com ↗</a>
-        <div class="contact__links">
-          <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://wa.me/6280000000000" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="https://youtube.com/" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://behance.net/" target="_blank" rel="noopener">Behance</a>
+        <div class="contact__blobs" aria-hidden="true">
+          <div class="cb cb-1"></div>
+          <div class="cb cb-2"></div>
+        </div>
+        <p class="section__label section__label--light">05 — Yuk Ngobrol!</p>
+        <h2 class="contact__title">Punya ide project?<br /><em>Bareng saya, kita wujudkan.</em></h2>
+        <div class="contact__socials">
+          <a href="https://www.instagram.com/frameflowid" target="_blank" rel="noopener" class="cta-social">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+            <span>Instagram Karya<br /><small>@frameflowid</small></span>
+          </a>
+          <a href="https://www.instagram.com/aisaaa_anya_3" target="_blank" rel="noopener" class="cta-social">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+            <span>Instagram Personal<br /><small>@aisaaa_anya_3</small></span>
+          </a>
+          <a href="mailto:emailkamu@gmail.com" class="cta-social">
+            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+            <span>Email<br /><small>emailkamu@gmail.com</small></span>
+          </a>
         </div>
       </div>
     </section>
@@ -297,7 +366,7 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>© <span id="year"></span> Siti Aisah. All rights reserved.</p>
+      <p>© <span id="year"></span> Siti Aisah. Dibuat dengan ❤️</p>
       <a href="#home">Kembali ke atas ↑</a>
     </div>
   </footer>
