@@ -345,6 +345,53 @@ em { font-style: normal; color: var(--maroon); }
 .work__item:hover .work__hover-tag { opacity: 1; }
 .work__add-hint { text-align: center; color: var(--muted); font-size: .9rem; margin-top: 24px; }
 
+/* ===== LINKEDIN BUTTON ===== */
+.btn--linkedin {
+  background: #0a66c2; border-color: #0a66c2; margin-top: 18px;
+}
+.btn--linkedin:hover { background: #004182; border-color: #004182; }
+.linkedin-cta { margin-top: 28px; }
+.social-pill--linkedin { border-color: #0a66c2; color: #0a66c2; }
+.social-pill--linkedin:hover { background: #0a66c2; border-color: #0a66c2; color: var(--white); }
+
+/* ===== EXPERIENCE ===== */
+.experience { background: var(--off); }
+.exp__list { display: flex; flex-direction: column; gap: 18px; }
+.exp__item {
+  display: flex; gap: 24px; align-items: flex-start;
+  padding: 32px; border-radius: var(--radius);
+  background: var(--white); border: 1px solid var(--line);
+  transition: transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow .4s, border-color .3s;
+}
+.exp__item:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: var(--maroon); }
+.exp__item--add { border-style: dashed; opacity: .6; }
+.exp__item--add:hover { transform: none; box-shadow: none; border-color: var(--line); }
+.exp__logo {
+  width: 64px; height: 64px; flex-shrink: 0; border-radius: 16px;
+  background: var(--maroon-soft); display: grid; place-items: center; font-size: 1.8rem;
+  border: 1.5px solid var(--line);
+}
+.exp__logo--add { background: transparent; }
+.exp__body { flex: 1; }
+.exp__top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+.exp__title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; }
+.exp__org { color: var(--maroon); font-weight: 700; font-size: .95rem; margin-top: 3px; }
+.exp__badge {
+  padding: 6px 14px; border-radius: 999px; flex-shrink: 0;
+  background: var(--maroon-soft); color: var(--maroon); font-weight: 700; font-size: .78rem;
+}
+.exp__desc { color: var(--muted); font-size: .97rem; line-height: 1.6; }
+.exp__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.exp__tags span {
+  padding: 5px 14px; border-radius: 999px; font-size: .8rem; font-weight: 700;
+  border: 1.5px solid var(--line); color: var(--muted);
+  transition: all .3s;
+}
+.exp__item:hover .exp__tags span { border-color: var(--maroon); color: var(--maroon); }
+.exp__linkedin { text-align: center; margin-top: 40px; }
+.exp__linkedin p { color: var(--muted); font-size: .95rem; margin-bottom: 4px; }
+.exp__linkedin .btn--linkedin { margin-top: 12px; }
+
 /* ===== INSTAGRAM CARDS ===== */
 .insta { background: var(--off); }
 .insta__cards { display: grid; grid-template-columns: 1.3fr 1fr; gap: 22px; }
