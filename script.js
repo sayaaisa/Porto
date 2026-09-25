@@ -54,17 +54,6 @@ navLinks.querySelectorAll("a").forEach((l) =>
   for (let i = 0; i < 14; i++) makeBubble();
 })();
 
-// ============ BLOB PARALLAX ============
-window.addEventListener("scroll", () => {
-  const y  = window.scrollY;
-  const b1 = document.querySelector(".blob-1");
-  const b2 = document.querySelector(".blob-2");
-  const b3 = document.querySelector(".blob-3");
-  if (b1) b1.style.transform = `translateY(${y * 0.15}px)`;
-  if (b2) b2.style.transform = `translateY(${-y * 0.1}px)`;
-  if (b3) b3.style.transform = `translateY(${y * 0.08}px)`;
-}, { passive: true });
-
 // ============ REVEAL ON SCROLL ============
 const revealObs = new IntersectionObserver(
   (entries) => {
@@ -84,35 +73,45 @@ document.querySelectorAll(".reveal").forEach((el, i) => {
 // ============ TILT 3D (spring back) ============
 document.querySelectorAll(".tilt-card").forEach((card) => {
   let rafId;
-  card.addEventListener("mousemove", (e) => {
+
+  card.addEventListener("pointermove", (e) => {
+    if (e.pointerType === "touch") return;
     cancelAnimationFrame(rafId);
     rafId = requestAnimationFrame(() => {
       const rect = card.getBoundingClientRect();
-      const dx = ((e.clientX - rect.left) / rect.width  - .5) * 2; // -1 to 1
+      const dx = ((e.clientX - rect.left) / rect.width - .5) * 2;
       const dy = ((e.clientY - rect.top)  / rect.height - .5) * 2;
-      card.style.transform = `perspective(800px) rotateY(${dx * 12}deg) rotateX(${-dy * 12}deg) scale(1.03)`;
+      card.classList.add("is-tilting");
+      card.style.transform = `perspective(850px) rotateY(${dx * 17}deg) rotateX(${-dy * 17}deg) translateY(-10px) scale(1.045)`;
     });
   });
-  card.addEventListener("mouseleave", () => {
+
+  card.addEventListener("pointerleave", () => {
     cancelAnimationFrame(rafId);
+    card.classList.remove("is-tilting");
     card.style.transform = "";
   });
 });
 
-// ============ RIPPLE on BUTTONS ============
-document.querySelectorAll(".btn").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    const r   = document.createElement("span");
-    r.className = "ripple";
-    const rect = btn.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-    r.style.cssText = `
-      width:${size}px; height:${size}px;
-      left:${e.clientX - rect.left - size/2}px;
-      top:${e.clientY  - rect.top  - size/2}px;
-    `;
-    btn.appendChild(r);
-    r.addEventListener("animationend", () => r.remove());
+// ============ RIPPLE on ALL CLICKABLE CONTROLS ============
+document.querySelectorAll(".btn, button, .social-pill, .cta-social").forEach((control) => {
+  control.classList.add("has-ripple");
+  control.addEventListener("pointerdown", (e) => {
+    if (e.button !== undefined && e.button !== 0) return;
+
+    const ripple = document.createElement("span");
+    const rect = control.getBoundingClientRect();
+    const size = Math.hypot(rect.width, rect.height) * 2;
+    const x = e.clientX || rect.left + rect.width / 2;
+    const y = e.clientY || rect.top + rect.height / 2;
+
+    ripple.className = "click-ripple";
+    ripple.style.width = `${size}px`;
+    ripple.style.height = `${size}px`;
+    ripple.style.left = `${x - rect.left - size / 2}px`;
+    ripple.style.top = `${y - rect.top - size / 2}px`;
+    control.appendChild(ripple);
+    ripple.addEventListener("animationend", () => ripple.remove(), { once: true });
   });
 });
 
@@ -136,46 +135,62 @@ filters.forEach((btn) =>
   const wrap = document.querySelector(".work__scroll-wrap");
   if (!wrap) return;
 
-  let isDown = false, startX, scrollLeft, velX = 0, lastX, rafId;
+  let isDragging = false;
+  let didDrag = false;
+  let lastX = 0;
+  let lastTime = 0;
+  let velocity = 0;
+  let momentumId;
 
-  wrap.addEventListener("mousedown", (e) => {
-    isDown = true; wrap.style.cursor = "grabbing";
-    startX = e.pageX - wrap.offsetLeft;
-    scrollLeft = wrap.scrollLeft;
-    lastX = e.pageX; velX = 0;
-    cancelAnimationFrame(rafId);
+  const coast = () => {
+    if (Math.abs(velocity) < .35) return;
+    wrap.scrollLeft += velocity;
+    velocity *= .94;
+    momentumId = requestAnimationFrame(coast);
+  };
+
+  wrap.addEventListener("pointerdown", (e) => {
+    if (e.pointerType !== "mouse" || e.button !== 0) return;
+    isDragging = true;
+    didDrag = false;
+    lastX = e.clientX;
+    lastTime = performance.now();
+    velocity = 0;
+    wrap.classList.add("is-dragging");
+    wrap.setPointerCapture(e.pointerId);
+    cancelAnimationFrame(momentumId);
   });
-  document.addEventListener("mouseup", () => {
-    if (!isDown) return;
-    isDown = false; wrap.style.cursor = "";
-    // Momentum coast
-    (function coast() {
-      if (Math.abs(velX) < 0.5) return;
-      wrap.scrollLeft += velX;
-      velX *= 0.92;
-      rafId = requestAnimationFrame(coast);
-    })();
-  });
-  document.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
+
+  wrap.addEventListener("pointermove", (e) => {
+    if (!isDragging) return;
+    const now = performance.now();
+    const deltaX = e.clientX - lastX;
+    const elapsed = Math.max(now - lastTime, 8);
+
+    if (Math.abs(deltaX) > 2) didDrag = true;
+    wrap.scrollLeft -= deltaX;
+    velocity = (-deltaX / elapsed) * 16.67;
+    lastX = e.clientX;
+    lastTime = now;
     e.preventDefault();
-    velX = e.pageX - lastX;
-    lastX = e.pageX;
-    const x    = e.pageX - wrap.offsetLeft;
-    const walk = (x - startX) * 1.4;
-    wrap.scrollLeft = scrollLeft - walk;
   });
 
-  // Touch swipe with spring rubber-band at edges
-  let touchStartX, touchScrollLeft;
-  wrap.addEventListener("touchstart", (e) => {
-    touchStartX    = e.touches[0].clientX;
-    touchScrollLeft = wrap.scrollLeft;
-  }, { passive: true });
-  wrap.addEventListener("touchmove", (e) => {
-    const diff = touchStartX - e.touches[0].clientX;
-    wrap.scrollLeft = touchScrollLeft + diff;
-  }, { passive: true });
+  const release = (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    wrap.classList.remove("is-dragging");
+    if (wrap.hasPointerCapture(e.pointerId)) wrap.releasePointerCapture(e.pointerId);
+    momentumId = requestAnimationFrame(coast);
+  };
+
+  wrap.addEventListener("pointerup", release);
+  wrap.addEventListener("pointercancel", release);
+  wrap.addEventListener("click", (e) => {
+    if (!didDrag) return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    didDrag = false;
+  }, true);
 })();
 
 // ============ SPRING BOUNCE on hover (extra: cards jiggle on hover) ============
